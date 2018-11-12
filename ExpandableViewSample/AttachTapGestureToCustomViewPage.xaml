@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
+             x:Class="ExpandableViewSample.AttachTapGestureToCustomViewPage">
+    <StackLayout Padding="8">
+        <expandable:ExpandableView x:Name="expandableView"
+                                   TouchHandlerView="{x:Reference arrow}"
+                                   ExpandAnimationLength="600">
+            <expandable:ExpandableView.PrimaryView>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Expandable view" FontSize="30" VerticalTextAlignment="Center"/>
+                    <Image x:Name="arrow" Source="arrow_drop_down.png" HeightRequest="60" WidthRequest="60" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+            </expandable:ExpandableView.PrimaryView>
+            <expandable:ExpandableView.SecondaryViewTemplate>
+                <DataTemplate>
+                            <StackLayout Spacing="0">
+                                <BoxView Color="#ebebeb" HeightRequest="1">
+                                </BoxView>
+                                <Grid Padding="10,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="1" />
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center">
+                                        <Label Text="Name"  VerticalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="Center" />
+                                    </StackLayout>
+                                    <BoxView Color="#ebebeb" Grid.Row="0" Grid.Column="1" WidthRequest="1">
+                                    </BoxView>
+                                    <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="5,0,0,0">
+                                        <Label Text="UserName"  VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
+                                </Grid>
+                                <BoxView Color="#ebebeb" HeightRequest="1">
+                                </BoxView>
+                                <Grid Padding="10,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="1" />
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center">
+                                        <Label Text="University ID" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                    </StackLayout>
+                                    <BoxView Color="#ebebeb" Grid.Row="0" Grid.Column="1" WidthRequest="1">
+                                    </BoxView>
+                                    <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="5,0,0,0">
+                                        <Label Text="12345678"  VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
+                                </Grid>                             
+                            </StackLayout>
+                        </DataTemplate>
+            </expandable:ExpandableView.SecondaryViewTemplate>
+        </expandable:ExpandableView>
+    </StackLayout>
+</ContentPage>
